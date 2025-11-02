@@ -170,3 +170,25 @@ of the prompt input area.
 To add the Penpot MCP server to a Claude Code project, issue the command
 
     claude mcp add penpot -t http http://localhost:4401/mcp
+
+#### Example: JetBrains Rider
+
+With the MCP server running:
+
+Open `Settings` and find the Junie > MCP Settings
+
+Edit the servers file:
+
+```json
+{
+  "mcpServers": {
+    "penpot": {
+      "type": "http",
+      "url": "http://localhost:4401/sse"
+    }
+  }
+}
+```
+
+NOTE: using `http://localhost:4401/mcp` was reporting timeouts by Junie. The mcp terminal screen was showing the interactions however. Dropping to `sse` allowed Junie to operate.  
+
